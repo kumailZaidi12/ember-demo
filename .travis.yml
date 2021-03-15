@@ -1,9 +1,10 @@
 ---
 language: node_js
 node_js:
-  - "10"
+  - "6"
 
-dist: xenial
+sudo: false
+dist: trusty
 
 addons:
   chrome: stable
@@ -17,9 +18,5 @@ env:
     # See https://git.io/vdao3 for details.
     - JOBS=1
 
-branches:
-  only:
-    - master
-
-script:
-  - npm test
+before_install:
+  - npm config set spin false
